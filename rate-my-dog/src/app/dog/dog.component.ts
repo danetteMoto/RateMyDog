@@ -17,6 +17,7 @@ export class Dog {
 
 export class DogComponent {
   dogs: Dog[] = [];
+
   constructor(
     private httpClient: HttpClient
   ) {}
@@ -25,13 +26,21 @@ export class DogComponent {
     this.getDogs();
   }
 
-  getDogs() {
+  public getDogs(): void {
+    console.log("getDogs");
     this.httpClient.get<any>('https://dog.ceo/api/breeds/image/random').subscribe(
       response => {
         console.log(response);
         this.dogs.push(response);
         console.log(this.dogs);
+        lastDogImageUrl = response.message;
       }
     )
   }
+
+  public getDogImageURL(): String {
+    return lastDogImageUrl;
+  }
 }
+
+var lastDogImageUrl = "";
