@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DogComponent } from './dog/dog.component';
 import {HttpClientModule} from '@angular/common/http';
+import { HeartRatingComponent } from './heart-rating/heart-rating.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DogComponent
+    DogComponent,
+    HeartRatingComponent
   ],
   imports: [
     AppRoutingModule,
