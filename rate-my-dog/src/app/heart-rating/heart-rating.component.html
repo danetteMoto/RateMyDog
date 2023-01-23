@@ -1,1 +1,7 @@
-<p>heart-rating works!</p>
+<span
+  *ngFor="let heart of hearts; let i = index"
+  (click)="rate(i + 1)"
+>
+  <ng-container *ngIf="heart; else noHeart">♥️</ng-container>
+  <ng-template #noHeart>🖤</ng-template>
+</span>
